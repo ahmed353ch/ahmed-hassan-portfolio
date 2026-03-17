@@ -1,16 +1,41 @@
-# React + Vite
+# Ahmed Hassan | Digital Product Designer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the source code of my personal portfolio website, designed and engineered to showcase high-end UI/UX design and modern frontend development.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+Experience the premium aesthetic, 3D elements, and smooth animations live! *(Deployment pending)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Key Features
+- **Premium Glassmorphism Aesthetics**: A tailored design using cutting edge transparency, blurs, and glow effects.
+- **Advanced Animations**: Powered by `framer-motion` for buttery smooth scrolled reveals and staggered staggered entrances.
+- **Custom Canvas Effects**: Real-time floating particle physics implemented using a raw HTML5 `<canvas>`.
+- **Optimal SEO**: Comprehensive meta tags including OpenGraph and Twitter cards for perfect sharing previews.
+- **Responsive Architecture**: Fully usable across mobile, tablet, and desktop viewports without layout shifts.
 
-## React Compiler
+## 🛠️ Tech Stack
+- **Framework**: [React 18](https://react.dev/) with [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS v3](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 Running Locally
 
-## Expanding the ESLint configuration
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Start the Development Server**
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for Production**
+   ```bash
+   npm run build
+   ```
+
+## 👨‍💻 About Me
+I'm Ahmed Hassan, a UI/UX Designer and Frontend Developer specializing in React and immersive web experiences. I bridge the gap between design and technical execution.
+
+Feel free to explore the code, and don't hesitate to reach out if you'd like to collaborate!
