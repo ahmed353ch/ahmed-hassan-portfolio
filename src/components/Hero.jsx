@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   const canvasRef = useRef(null);
@@ -94,7 +95,13 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-violet/10 blur-[120px] rounded-full"></div>
       
       <div className="container mx-auto px-6 relative z-10 text-center">
-        <div className="relative w-full max-w-lg mx-auto mb-12 flex justify-center items-center h-[400px]" data-purpose="hero-visual">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative w-full max-w-lg mx-auto mb-12 flex justify-center items-center h-[400px]" 
+          data-purpose="hero-visual"
+        >
           <div className="animate-float w-64 h-64 border-2 border-brand-cyan/30 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] relative">
             <div className="absolute inset-0 border-2 border-brand-violet/30 rounded-full rotate-45 animate-pulse-slow"></div>
             <div className="absolute inset-4 glass rounded-full flex items-center justify-center overflow-hidden">
@@ -102,23 +109,38 @@ export default function Hero() {
               <canvas ref={canvasRef} className="absolute inset-0 cursor-grab active:cursor-grabbing w-full h-full" id="hero-canvas"></canvas>
             </div>
           </div>
-        </div>
+        </motion.div>
         
-        <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl mb-6 tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="font-heading text-6xl md:text-8xl lg:text-9xl mb-6 tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500"
+        >
           Ahmed Hassan
-        </h1>
-        <p className="text-lg md:text-2xl text-gray-400 mb-10 font-light tracking-wide">
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-lg md:text-2xl text-gray-400 mb-10 font-light tracking-wide"
+        >
           UI/UX Designer &amp; <span className="text-brand-cyan">Frontend Developer</span>
-        </p>
+        </motion.p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
           <a className="px-10 py-4 bg-brand-cyan text-brand-black font-bold rounded-custom btn-glow transition-all hover:scale-105" href="#work">
             View Work
           </a>
           <a className="px-10 py-4 border border-white/20 hover:bg-white/5 rounded-custom transition-all" href="#contact">
             Get in Touch
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

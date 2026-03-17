@@ -1,4 +1,8 @@
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import project1 from '../assets/project1.png';
+import project2 from '../assets/project2.png';
+import project3 from '../assets/project3.png';
 
 export default function Projects() {
   const projects = [
@@ -9,7 +13,7 @@ export default function Projects() {
       tagColor: 'text-brand-cyan',
       title: 'E-commerce App',
       description: 'A premium shopping experience for luxury fashion brands.',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA86PQC1ZOMLl7jWBqsw__VleFaUdGLLHaCDbzqYSVsGIGuNY3DlIcyMvSNuyRPnoRH5ni-hGIzvLcyQ1WR1spTC2gvdEa5236D1Ai-ViDfqMJvwbEwAsnafj63dsg2BXHM56OTN52kMUP5iq5qeI2NwQW_aPzwB7aL0lIe_KksiUcklemHi-SJTS-JIBqcnChkTkxDg8FUflnhKNJ9apIh8FxY8pOlcs8sUGkVlKlgMiS_p8RRbTGP7XHxSSgdZnSSKYWrd4uSTLkf',
+      image: project1,
       linkColor: 'text-brand-cyan'
     },
     {
@@ -19,7 +23,7 @@ export default function Projects() {
       tagColor: 'text-brand-violet',
       title: 'Crypto Dashboard',
       description: 'Real-time data visualization for decentralized finance protocols.',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCQs7arN4w_a1eqQfmwoXSilzcgvWzf4S0X8YvznLMpUJH1rVTowpUb__XHWHq-AxtD8MrWdL33kpNCfH-jEmwKdlrJOYAqJJw72FZS0UGBjsIIO79N5vFroGzWS7RpxFYk5Blj5i0gALJ75KrVqaBRN-YoTlrHgPvMtET-C0Fm8TTrdN-M9gWsWRcCloiLkDgoZO0MylT0vyLiADmDhqsV6oLHkt60GlTkizW5Q591lmWJO6MOTNL9s_2fAQ1raWinmPoDmLxWdBkN',
+      image: project2,
       linkColor: 'text-brand-violet'
     },
     {
@@ -29,7 +33,7 @@ export default function Projects() {
       tagColor: 'text-white',
       title: 'Health Tracker',
       description: 'AI-powered wellness app for modern athlete health monitoring.',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCi3xbeeCHbBz5EQWAebcUbebShM6xbDTSIEvic6IIk4ADlJaSvlCZf_E-ZtESUkAljCOHh3N2f7rhxCVx1uS4T40pZGWoGDgxq9IGSuqAhD9C0Sbn2wAu6mrttykhUclRvWqlAQVI17uZLQM5hAn4Z-cPZJ1D3ojDwUiBwqE_yMQan-ybRsrkjI4zk5FMTvetG5n6nbe7c8BXaPhOYFpTX0yI1xuangy5QK9FwTK5qs2la0ZbXRB9npqysx9sEb48tYwzshQzRmhSS',
+      image: project3,
       linkColor: 'text-white'
     }
   ];
@@ -47,8 +51,15 @@ export default function Projects() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <article key={project.id} className="project-card glass rounded-custom overflow-hidden group">
+          {projects.map((project, index) => (
+            <motion.article 
+              key={project.id} 
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="project-card glass rounded-custom overflow-hidden group"
+            >
               <div className="h-64 overflow-hidden relative">
                 <img alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={project.image} />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black to-transparent opacity-60"></div>
@@ -64,7 +75,7 @@ export default function Projects() {
                   View Project <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </a>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
